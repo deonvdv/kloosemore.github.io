@@ -1,7 +1,8 @@
-baseURL = 'http://example.org/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Kathryn Loosemore'
 theme = 'salinger'
+#base = 'kloosemore.github.io/'
 
 
 [params]
@@ -29,7 +30,7 @@ showSocialOnHomepage = true
 showOnlyFeaturedPost = true
 
 [params.meta]
-title = "KAthryn Loosemore"
+title = "Kathryn Loosemore"
 description = "Kathryn Loosemore is a Doctoral Candidate in International Relations at Northumbria University and Chief Operating Officer at Kantar Worldpanel. Her research focuses on the relationship between ETA’s activities and public opinion."
 keywords = ["Terrorism", "ETA", "Databases"]
 

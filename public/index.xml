@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kathryn Loosemore</title>
+    <link>/</link>
+    <description>Recent content on Kathryn Loosemore</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reflections on Reasearch</title>
+      <link>/research/reflections-on-research/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/research/reflections-on-research/</guid>
+      <description>By: Kathryn Loosemore and Matthew Johnson1
+This article presents a new account of the size and scale of ETA’s activities. Highlighting a range of political considerations that shape existing records of impact, the article traces the deployment of a range of distinct methods of data collection and evidence verification in the creation of the most comprehensive database of ETA’s activities produced to date. The resulting database suggests that ETA’s impact is significantly greater than previously recognized, with a total of 1,047 attacks from 1959 to 2010.</description>
+    </item>
+    
+    <item>
+      <title>ETA Victims List</title>
+      <link>/research/eta_database/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/research/eta_database/</guid>
+      <description>Detailed database of ETA victims from 1961 to 2010.
+ETA Victims List - Latest</description>
+    </item>
+    
+  </channel>
+</rss>
