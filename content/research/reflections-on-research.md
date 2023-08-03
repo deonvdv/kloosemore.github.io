@@ -1,5 +1,5 @@
 ---
-title: "Reflections on Reasearch"
+title: "Reflections on Research"
 date: "2023-01-24"
 description: "The challenge of establishing the impact of terrorist organisations: development of a database on ETA’s activities"
 tags: [
