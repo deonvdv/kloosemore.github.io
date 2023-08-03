@@ -1,6 +1,6 @@
 ---
 title: "Reflections on Reasearch"
-date: "2023-01-18"
+date: "2023-01-24"
 description: "The challenge of establishing the impact of terrorist organisations: development of a database on ETA’s activities"
 tags: [
     "ETA",
@@ -12,6 +12,8 @@ featured: true
 **By:** Kathryn Loosemore and <cite>Matthew Johnson[^1]</cite>
 
 [^1]: Matthew Johnson is Professor of Politics at Northumbria University. His research focuses on the relationship between public policy and health and social outcomes. ORCID: 0000-0002-9987-7050
+
+Published in: [Critical Studies on Terrorism - Volume 16, 2023](https://www.tandfonline.com/doi/full/10.1080/17539153.2023.2170514)
 
 This article presents a new account of the size and scale of ETA’s activities. Highlighting a range of political considerations that shape existing records of impact, the article traces the deployment of a range of distinct methods of data collection and evidence verification in the creation of the most comprehensive database of ETA’s activities produced to date. The resulting database suggests that ETA’s impact is significantly greater than previously recognized, with a total of 1,047 attacks from 1959 to 2010. Within those attacks, 66 people were kidnapped (32 of whom were killed), 956 people were killed, there were 1949 injuries and 3 post-incident deaths via suicide and cancer that was attributed to trauma. Of the attacks, 503 were bombings, 456 were shootings and 66 were kidnappings. The remaining attacks used other forms of violence (Molotov cocktails, arson, electrocution or being thrown from moving vehicles). This comprehensive account suggests that previous records underestimate the total number of people killed by over 100, with injuries often not even recorded formally. As more murders are detected and attributed to ETA, the methods deployed within this new database will ensure that the impact continues to be tracked. Those methods enable scholars of terrorism to track the impact of organisations more broadly. As such, this article serves as a means of fostering real discussion on methods more broadly, particularly in terms of criteria adopted for a range of political reasons.
 
