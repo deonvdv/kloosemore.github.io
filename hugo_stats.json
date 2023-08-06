@@ -17,6 +17,7 @@
       "html",
       "i",
       "iframe",
+      "img",
       "label",
       "li",
       "link",
@@ -147,7 +148,9 @@
       "fnref1:2",
       "fnref:1",
       "fnref:2",
+      "injuries",
       "introduction",
+      "kidnappings",
       "measuring-terrorisms-impact",
       "methods",
       "results",
@@ -157,7 +160,8 @@
       "the-global-terror-database-gtb",
       "the-mapa-del-terror-of-the-colectivo-de-víctimas-del-terrorismo-the-spanish-terrorist-victims-organisation-covite",
       "the-spanish-government",
-      "the-universidad-del-país-vascoeuskal-herriko-unibertsitatea-upv-ehu-kidnappings-database"
+      "the-universidad-del-país-vascoeuskal-herriko-unibertsitatea-upv-ehu-kidnappings-database",
+      "victims"
     ]
   }
 }

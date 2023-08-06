@@ -11,19 +11,19 @@ featured: true
 
 # Victims
 
-[![ETA Victims](/images/ETA Victims.webp "ETA Victims")](https://public.flourish.studio/visualisation/14523595/)
+[![ETA Victims](/images/ETA%20Victims.webp)](https://public.flourish.studio/visualisation/14523595/)
 
 Visualisation of [Victims](https://public.flourish.studio/visualisation/14523595/) of ETA activities from 1961 to 2010
 
 # Injuries
 
-[![ETA Injuries](/images/ETA Injuries.webp "ETA Injuries")](https://public.flourish.studio/visualisation/14524659/)
+[![ETA Injuries](/images/ETA%20Injuries.webp "ETA Injuries")](https://public.flourish.studio/visualisation/14524659/)
 
 Visualisation of [Injuries](https://public.flourish.studio/visualisation/14524659/) caused by ETA from 1961 to 2010
 
 # Kidnappings
 
-[![ETA Kidnappings](/images/ETA Kidnappings.webp "ETA Kidnappings")](https://public.flourish.studio/visualisation/14524637/)
+[![ETA Kidnappings](/images/ETA%20Kidnappings.webp "ETA Kidnappings")](https://public.flourish.studio/visualisation/14524637/)
 
 Visualisation of [ETA Kidnappings](https://public.flourish.studio/visualisation/14524637/) from 1961 to 2010
 
