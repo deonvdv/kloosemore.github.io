@@ -9,7 +9,10 @@ categories: ["Terrorism", "ETA", "Databases", "Visualisation"]
 featured: true
 ---
 
-# Victims
+ETA's victims (1961 - 2010) plotted on a map to demonstrate the impact of the terrorist group's campaign across Europe. The data allows for three separate visualisations:
+1. Mortal victims (deaths caused by ETA)
+2. Injuries
+3. Kidnappings
 
 [![ETA Victims](/images/ETA%20Victims.webp)](https://public.flourish.studio/visualisation/14523595/)
 
