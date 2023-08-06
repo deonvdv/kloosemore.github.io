@@ -14,6 +14,8 @@ ETA's victims (1961 - 2010) plotted on a map to demonstrate the impact of the te
 2. Injuries
 3. Kidnappings
 
+# Mortal Victims
+
 [![ETA Victims](/images/ETA%20Victims.webp)](https://public.flourish.studio/visualisation/14523595/)
 
 Visualisation of [Victims](https://public.flourish.studio/visualisation/14523595/) of ETA activities from 1961 to 2010
