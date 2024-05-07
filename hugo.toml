@@ -7,7 +7,7 @@ theme = 'salinger'
 
 [params]
 
-author = "Kathryn Loosemore"
+author = "Kathryn Loosemore PhD"
 #googleAnalytics = ""
 twemoji = true
 text404 = "Since the page you were looking for seems like doesn't exist, we <strong>strongly</strong> suggest you to better investigate the URL and/or go back to the <a href=\"/\">home</a>. </br></br> <iframe src=\"https://giphy.com/embed/aCKMaeduKfFXG\" width=\"480\" height=\"480\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>"
@@ -30,8 +30,8 @@ showSocialOnHomepage = true
 showOnlyFeaturedPost = true
 
 [params.meta]
-title = "Kathryn Loosemore"
-description = "Kathryn Loosemore is a Doctoral Candidate in International Relations at Northumbria University and Chief Operating Officer at Kantar Worldpanel. Her research focuses on the relationship between ETA’s activities and public opinion."
+title = "Kathryn Loosemore PhD"
+description = "Kathryn Loosemore holds a PhD in International Relations from Northumbria University and serves as the Chief Operating Officer at Kantar Worldpanel. Her expertise lies in examining the correlation between ETA's activities and public sentiment through her research endeavors."
 keywords = ["Terrorism", "ETA", "Databases"]
 
 [params.footer]

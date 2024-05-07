@@ -1,4 +1,4 @@
 ---
-title: "Kathryn Loosemore"
-description: "Kathryn Loosemore is a Doctoral Candidate in International Relations at Northumbria University and Chief Operating Officer at Kantar Worldpanel. Her research focuses on the relationship between ETA’s activities and public opinion."
+title: "Kathryn Loosemore PhD"
+description: "Kathryn Loosemore holds a PhD in International Relations from Northumbria University and serves as the Chief Operating Officer at Kantar Worldpanel. Her expertise lies in examining the correlation between ETA's activities and public sentiment through her research endeavors."
 ---
