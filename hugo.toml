@@ -35,7 +35,7 @@ description = "Kathryn Loosemore holds a PhD in International Relations from Nor
 keywords = ["Terrorism", "ETA", "Databases"]
 
 [params.footer]
-copy = 'Kathryn Loosemore. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>'
+copy = 'Kathryn Loosemore PhD. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>'
 
 [[params.social]]
 name = "github"
