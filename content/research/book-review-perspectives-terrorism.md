@@ -11,8 +11,6 @@ categories: ["Terrorism", "ETA", "Book Reviews"]
 featured: true
 ---
 
-Dr Loosemore reviews 'Javier Argomaniz, Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country' in the June edition (iIssue 2) of 'Perspectives on Terrorism'.
-
 It has been more than seven years since the Basque militant group ETA (Euskadi Ta Askatasuna) disarmed and disbanded following a bloody campaign that lasted almost 60 years. The complexity of ETA’s campaign, and the factors that eventually brought their reign of terror in the Basque Country to an end, are the subject of Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country. In this highly engaging and informative study, Javier Argomaniz explores multiple factors at play in ETA’s demise, focused on the actions and impact of civil society organisations (CSOs). As he states early in the text, “I elaborate on the relationship between nonviolent action and the other major factors usually recognized by scholars as pivotal for ETA’s defeat” (p. 32).  
 
-[Read the full review on Perspectives on Terrorism](https://pt.icct.nl/article/book-review-javier-argomaniz-resisting-terror-civil-action-and-non-violent-resistance)
+[Download the full review on Perspectives on Terrorism](https://pt.icct.nl/article/book-review-javier-argomaniz-resisting-terror-civil-action-and-non-violent-resistance)
