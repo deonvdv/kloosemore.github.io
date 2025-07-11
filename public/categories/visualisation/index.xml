@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visualisation on Kathryn Loosemore PhD</title>
+    <link>/categories/visualisation/</link>
+    <description>Recent content in Visualisation on Kathryn Loosemore PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/visualisation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ETA Victims Over Time</title>
+      <link>/research/eta_over_time/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>/research/eta_over_time/</guid>
+      <description>ETA&amp;rsquo;s attacks and victims (1961 - 2010) plotted on a map to demonstrate the impact of the terrorist group&amp;rsquo;s campaign across Europe. The data allows for four separate visualisations:&#xA;Attacks Mortal victims (deaths caused by ETA) Injuries Kidnappings Attacks Visualisation of ETA Attacks from 1961 to 2010&#xA;Mortal Victims Visualisation of Mortal Victims of ETA activities from 1961 to 2010&#xA;Injuries Visualisation of Injuries caused by ETA from 1961 to 2010</description>
+    </item>
+  </channel>
+</rss>

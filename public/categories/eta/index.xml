@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ETA on Kathryn Loosemore</title>
+    <title>ETA on Kathryn Loosemore PhD</title>
     <link>/categories/eta/</link>
-    <description>Recent content in ETA on Kathryn Loosemore</description>
+    <description>Recent content in ETA on Kathryn Loosemore PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/eta/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/eta/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Reflections on Reasearch</title>
-      <link>/research/reflections-on-research/</link>
-      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/research/reflections-on-research/</guid>
-      <description>By: Kathryn Loosemore and Matthew Johnson1
-This article presents a new account of the size and scale of ETA’s activities. Highlighting a range of political considerations that shape existing records of impact, the article traces the deployment of a range of distinct methods of data collection and evidence verification in the creation of the most comprehensive database of ETA’s activities produced to date. The resulting database suggests that ETA’s impact is significantly greater than previously recognized, with a total of 1,047 attacks from 1959 to 2010.</description>
+      <title>Book review published in &#39;Perspectives on Terrorism&#39;, Volume XIX, Issue 2, June 2025</title>
+      <link>/research/book-review-perspectives-terrorism/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/research/book-review-perspectives-terrorism/</guid>
+      <description>Dr Loosemore reviews &amp;lsquo;Javier Argomaniz, Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country&amp;rsquo; in the June edition (iIssue 2) of &amp;lsquo;Perspectives on Terrorism&amp;rsquo;.&#xA;It has been more than seven years since the Basque militant group ETA (Euskadi Ta Askatasuna) disarmed and disbanded following a bloody campaign that lasted almost 60 years. The complexity of ETA’s campaign, and the factors that eventually brought their reign of terror in the Basque Country to an end, are the subject of Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country.</description>
     </item>
-    
+    <item>
+      <title>Book review: Counter-terror by proxy: the Spanish State’s illicit war with ETA</title>
+      <link>/research/counter_terror_by_proxy/</link>
+      <pubDate>Thu, 31 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>/research/counter_terror_by_proxy/</guid>
+      <description>It has been almost 5 years since the Basque militant group ETA (Euskadi Ta Askatasuna) disarmed and disbanded following a bloody campaign that lasted almost 60 years. In Counter-terror by proxy: The Spanish State’s illicit war with ETA, Emmanuel-Pierre Guittet takes a deep dive into a specific period in the conflict (1983-1987), during which a group of state-sponsored mercenaries carried out their own brutal campaign that spanned the French-Spanish border. The group was called GAL (Grupos Antiterroristas de Liberacion) and its targets were suspected ETA members and supporters.</description>
+    </item>
+    <item>
+      <title>ETA Victims Over Time</title>
+      <link>/research/eta_over_time/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>/research/eta_over_time/</guid>
+      <description>ETA&amp;rsquo;s attacks and victims (1961 - 2010) plotted on a map to demonstrate the impact of the terrorist group&amp;rsquo;s campaign across Europe. The data allows for four separate visualisations:&#xA;Attacks Mortal victims (deaths caused by ETA) Injuries Kidnappings Attacks Visualisation of ETA Attacks from 1961 to 2010&#xA;Mortal Victims Visualisation of Mortal Victims of ETA activities from 1961 to 2010&#xA;Injuries Visualisation of Injuries caused by ETA from 1961 to 2010</description>
+    </item>
+    <item>
+      <title>Reflections on Research</title>
+      <link>/research/reflections-on-research/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>/research/reflections-on-research/</guid>
+      <description>By: Kathryn Loosemore and Matthew Johnson1&#xA;Published in: Critical Studies on Terrorism - Volume 16, 2023&#xA;This article presents a new account of the size and scale of ETA’s activities. Highlighting a range of political considerations that shape existing records of impact, the article traces the deployment of a range of distinct methods of data collection and evidence verification in the creation of the most comprehensive database of ETA’s activities produced to date.</description>
+    </item>
     <item>
       <title>ETA Victims List</title>
       <link>/research/eta_database/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>/research/eta_database/</guid>
-      <description>Detailed database of ETA victims from 1961 to 2010.
-ETA Victims List - Latest</description>
+      <description>This dataset catalogues the impact of ETA&amp;rsquo;s campaign over time (1961 - 2010) in terms of mortal victims, injuries and kidnappings. Each attack includes details of the following:&#xA;Date(s) Scale of impact (number of individuals affected) Type of impact (death, injury, kidnapping) Method of attack (shooting, bomb et.c) Intended and actual target(s) Location Source(s) This is a living dataset and is being continuously updated as new sources are added.&#xA;ETA Victims List - Latest</description>
     </item>
-    
   </channel>
 </rss>
