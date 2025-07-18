@@ -48,6 +48,23 @@ hugo
 - `/static/`: Static files served directly
 - `/public/`: Build output
 
+## Contact Form
+
+The site includes a contact form integrated with Netlify Forms for secure message handling:
+
+- **Location**: Available at `/contact/` with links in header and footer navigation
+- **Features**: Spam protection via honeypot field, form validation, custom success page
+- **Privacy**: Email address is completely hidden from source code
+- **Submissions**: All form submissions appear in the Netlify dashboard under Forms section
+- **Notifications**: Email notifications can be configured in Netlify site settings
+
+### Form Management
+
+- **View submissions**: Netlify Dashboard → Site → Forms
+- **Configure notifications**: Site Settings → Forms → Form notifications
+- **Spam filtering**: Automatic spam detection with manual review options
+- **Export data**: Submissions can be exported from the Netlify dashboard
+
 ## Content Focus
 
 The website serves as both a portfolio and research repository, with particular emphasis on ETA terrorism studies and victim databases. All content maintains a formal academic tone appropriate for professional academic presentation.
