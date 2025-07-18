@@ -1,0 +1,80 @@
+<form 
+  name="contact" 
+  method="POST" 
+  data-netlify="true" 
+  data-netlify-honeypot="bot-field"
+  action="/contact-success"
+  class="max-w-2xl mx-auto space-y-6 p-6 bg-base-100 rounded-lg shadow-lg">
+  
+  <!-- Honeypot field for spam protection -->
+  <input type="hidden" name="form-name" value="contact">
+  <div class="hidden">
+    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+  </div>
+  
+  <div class="form-control">
+    <label class="label" for="name">
+      <span class="label-text font-semibold">Name *</span>
+    </label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      required 
+      class="input input-bordered w-full" 
+      placeholder="Your full name">
+  </div>
+  
+  <div class="form-control">
+    <label class="label" for="email">
+      <span class="label-text font-semibold">Email *</span>
+    </label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      required 
+      class="input input-bordered w-full" 
+      placeholder="your.email@example.com">
+  </div>
+  
+  <div class="form-control">
+    <label class="label" for="subject">
+      <span class="label-text font-semibold">Subject *</span>
+    </label>
+    <input 
+      type="text" 
+      id="subject" 
+      name="subject" 
+      required 
+      class="input input-bordered w-full" 
+      placeholder="Brief description of your inquiry">
+  </div>
+  
+  <div class="form-control">
+    <label class="label" for="message">
+      <span class="label-text font-semibold">Message *</span>
+    </label>
+    <textarea 
+      id="message" 
+      name="message" 
+      required 
+      rows="6" 
+      class="textarea textarea-bordered w-full" 
+      placeholder="Please provide details about your inquiry, research interests, or questions about my work..."></textarea>
+  </div>
+  
+  <div class="form-control">
+    <button type="submit" class="btn btn-primary">
+      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+      </svg>
+      Send Message
+    </button>
+  </div>
+  
+  <div class="text-sm text-base-content/70 mt-4">
+    <p>* Required fields</p>
+    <p>Your message will be sent securely. I respect your privacy and will only use your contact information to respond to your inquiry.</p>
+  </div>
+</form>

@@ -1,0 +1,10 @@
+{{ define "main" }} 
+  {{ partial "hero.html" (dict "Title" .Title "Subtitle" .Params.Description "Context" .) }}
+
+  <article class="prose text-justify feed">{{- .Content -}}</article>
+  
+  <div class="mt-8">
+    {{ partial "contact-form.html" . }}
+  </div>
+
+{{ end }}
