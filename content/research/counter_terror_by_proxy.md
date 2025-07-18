@@ -1,8 +1,7 @@
 ---
 title: "Book review: Counter-terror by proxy: the Spanish State’s illicit war with ETA"
 date: "2023-08-31"
-description: "Counter-terror by proxy: the Spanish State’s illicit war with ETA
-by Emmanuel-Pierre Guittet, Manchester: Manchester University Press, 2021, 201 pp., £80 (UK) (Hardback), ISBN: 9781526158826"
+description: "Dr Loosemore reviews 'Counter-terror by proxy: the Spanish State’s illicit war with ETA' by Emmanuel-Pierre Guittet, Manchester: Manchester University Press, 2021"
 tags: [
     "ETA",
 ]
@@ -14,4 +13,4 @@ It has been almost 5 years since the Basque militant group ETA (Euskadi Ta Ask
 
 Guittet’s account draws on extensive research from an impressive range of French and Spanish sources, setting the historical context cleanly and concisely through an exploration of ETA’s depiction in Spanish police and press archives. This depiction was, Guittet argues, leveraged by the Spanish Government to justify – internally at first, and externally later – the illegal actions of GAL. He describes a young democracy with a culture of subversion inherited from the days of Franco, taking matters into their own hands after struggling to garner support from its French neighbour to extradite ETA suspects. Following a detailed account of GAL’s campaign and victims, Guittet discusses the morality and impact of their violence, which is still felt in contemporary Spain.
 
-[Read the full article](https://www.tandfonline.com/eprint/5RJAAM5HTPIMJQUPA3P3/full?target=10.1080/17539153.2023.2251226)
+[Download the full article](https://www.tandfonline.com/eprint/5RJAAM5HTPIMJQUPA3P3/full?target=10.1080/17539153.2023.2251226)

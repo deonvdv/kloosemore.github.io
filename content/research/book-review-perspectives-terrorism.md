@@ -1,7 +1,7 @@
 ---
 title: "Book review published in 'Perspectives on Terrorism', Volume XIX, Issue 2, June 2025"
 date: "2025-06-01"
-description: "Dr Loosemore reviews 'Javier Argomaniz, Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country' in the June edition (iIssue 2) of 'Perspectives on Terrorism'."
+description: "Dr Loosemore reviews 'Javier Argomaniz, Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country' in the June edition (Issue 2) of 'Perspectives on Terrorism'."
 tags: [
     "ETA",
     "Book Reviews",
