@@ -26,7 +26,6 @@
   color: #9e9c96;
   line-height: 1.6;
   margin-bottom: 1.75rem;
-  white-space: nowrap;
 }
 .db-stat-row {
   display: flex;
@@ -59,22 +58,24 @@
   display: flex;
   flex-direction: row;
   gap: 0.75rem;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: nowrap;
 }
 @media (max-width: 700px) {
-  .db-cta-group { flex-wrap: wrap; }
+  .db-cta-group { flex-direction: column; }
 }
 .db-cta-btn {
-  display: inline-flex;
+  flex: 1;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: #f7b267;
   color: #1a1917;
   font-family: Helvetica Neue, Arial, sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 6px;
   border: 2px solid #e8943a;
   box-shadow: 0 4px 12px rgba(247, 178, 103, 0.4);
@@ -82,6 +83,7 @@
   transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
   letter-spacing: -0.01em;
   gap: 0.2rem;
+  text-align: center;
 }
 .db-cta-btn:hover { background: #e8943a; box-shadow: 0 6px 16px rgba(247, 178, 103, 0.55); transform: translateY(-1px); }
 .db-cta-btn .btn-label { font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
@@ -124,7 +126,7 @@
 <section class="db-hero">
   <div class="db-hero-inner">
     <p style="font-family:Helvetica Neue,Arial,sans-serif;font-size:1rem;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;color:#9e9c96;margin-bottom:0.3rem;">Research by Dr. Kathryn Loosemore</p>
-    <p style="font-family:Helvetica Neue,Arial,sans-serif;font-size:1.4rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;color:#f5f4f0;margin-bottom:0.6rem;white-space:nowrap;">Basque terrorist group Euskadi Ta Askatasuna (ETA)</p>
+    <p style="font-family:Helvetica Neue,Arial,sans-serif;font-size:1.4rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;color:#f5f4f0;margin-bottom:0.6rem;">Basque terrorist group Euskadi Ta Askatasuna (ETA)</p>
     <h1>A comprehensive record of ETA&#8217;s campaign, 1959&#8211;2018</h1>
     <p class="db-hero-sub">Search, filter and export data on 1,034 documented ETA attacks drawn from verified sources.</p>
     <div class="db-stat-row">
