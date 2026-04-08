@@ -30,9 +30,9 @@ showSocialOnHomepage = true
 showOnlyFeaturedPost = true
 
 [params.meta]
-title = "Kathryn Loosemore PhD"
-description = "Kathryn Loosemore holds a PhD in International Relations from Northumbria University and serves as the Chief Operating Officer at Kantar Worldpanel. Her expertise lies in examining the correlation between ETA's activities, material conditions, and public sentiment through her research endeavors."
-keywords = ["Terrorism", "ETA", "Databases"]
+title = "Kathryn Loosemore PhD — ETA Research Database"
+description = "Academic research on ETA's campaign 1961–2010. Explore a searchable database of 1,034 documented incidents, an interactive incidents map, and published research by Dr Kathryn Loosemore."
+keywords = ["ETA attacks database", "ETA victims list", "ETA terrorism Spain", "Basque separatist attacks", "víctimas de ETA", "atentados ETA base de datos", "ETA terrorismo España"]
 
 [params.footer]
 copy = 'Kathryn Loosemore PhD. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>'
@@ -45,14 +45,24 @@ featured = true # true to be displayed in the home hero.
 
 [Menu]
 [[menu.main]]
+name = "Database"
+url = "/database/"
+weight = 10
+
+[[menu.main]]
+name = "Map"
+url = "/map/"
+weight = 20
+
+[[menu.main]]
 name = "Research"
 url = "/research/"
-weight = 1
+weight = 30
 
 [[menu.main]]
 name = "Contact"
 url = "/contact/"
-weight = 2
+weight = 40
 
 [taxonomies]
 category = "categories"

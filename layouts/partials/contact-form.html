@@ -1,80 +1,112 @@
-<form 
-  name="contact" 
-  method="POST" 
-  data-netlify="true" 
-  data-netlify-honeypot="bot-field"
-  action="/contact-success"
+<form
+  action="https://formspree.io/f/YOUR_FORM_ID"
+  method="POST"
   class="max-w-2xl mx-auto space-y-6 p-6 bg-base-100 rounded-lg shadow-lg">
-  
-  <!-- Honeypot field for spam protection -->
-  <input type="hidden" name="form-name" value="contact">
-  <div class="hidden">
-    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-  </div>
-  
+
   <div class="form-control">
     <label class="label" for="name">
       <span class="label-text font-semibold">Name *</span>
     </label>
-    <input 
-      type="text" 
-      id="name" 
-      name="name" 
-      required 
-      class="input input-bordered w-full" 
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      class="input input-bordered w-full"
       placeholder="Your full name">
   </div>
-  
+
   <div class="form-control">
     <label class="label" for="email">
-      <span class="label-text font-semibold">Email *</span>
+      <span class="label-text font-semibold">Email address *</span>
     </label>
-    <input 
-      type="email" 
-      id="email" 
-      name="email" 
-      required 
-      class="input input-bordered w-full" 
+    <input
+      type="email"
+      id="email"
+      name="_replyto"
+      required
+      class="input input-bordered w-full"
       placeholder="your.email@example.com">
   </div>
-  
+
   <div class="form-control">
-    <label class="label" for="subject">
-      <span class="label-text font-semibold">Subject *</span>
+    <label class="label" for="type">
+      <span class="label-text font-semibold">Type of enquiry *</span>
     </label>
-    <input 
-      type="text" 
-      id="subject" 
-      name="subject" 
-      required 
-      class="input input-bordered w-full" 
-      placeholder="Brief description of your inquiry">
+    <select id="type" name="enquiry_type" class="select select-bordered w-full" onchange="handleEnquiryType(this.value)">
+      <option value="research">Research question</option>
+      <option value="data">Additional data or source</option>
+      <option value="error">Error or correction</option>
+      <option value="general">General</option>
+    </select>
   </div>
-  
+
+  <div class="form-control" id="incident-ref-field" style="display:none">
+    <label class="label" for="incident_ref">
+      <span class="label-text font-semibold">Incident reference <span class="font-normal opacity-60">(optional)</span></span>
+    </label>
+    <input
+      type="text"
+      id="incident_ref"
+      name="incident_reference"
+      class="input input-bordered w-full"
+      placeholder="e.g. Madrid 1980 March, or a row number from the database">
+    <label class="label">
+      <span class="label-text-alt opacity-60">Paste the date, location, or any identifying detail from the database record you're referring to.</span>
+    </label>
+  </div>
+
   <div class="form-control">
     <label class="label" for="message">
       <span class="label-text font-semibold">Message *</span>
     </label>
-    <textarea 
-      id="message" 
-      name="message" 
-      required 
-      rows="6" 
-      class="textarea textarea-bordered w-full" 
-      placeholder="Please provide details about your inquiry, research interests, or questions about my work..."></textarea>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows="6"
+      class="textarea textarea-bordered w-full"
+      placeholder="Please provide details about your inquiry, research interests, or questions about the database..."></textarea>
   </div>
-  
+
   <div class="form-control">
     <button type="submit" class="btn btn-primary">
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
       </svg>
-      Send Message
+      Send message
     </button>
   </div>
-  
+
   <div class="text-sm text-base-content/70 mt-4">
     <p>* Required fields</p>
     <p>Your message will be sent securely. I respect your privacy and will only use your contact information to respond to your inquiry.</p>
   </div>
+
 </form>
+
+<script>
+(function() {
+  // Pre-fill fields from URL parameters (e.g. from database "Suggest a correction" link)
+  const params = new URLSearchParams(window.location.search);
+  const subject = params.get('subject');
+  const incident = params.get('incident');
+
+  if (subject === 'correction') {
+    const typeSelect = document.getElementById('type');
+    if (typeSelect) { typeSelect.value = 'error'; handleEnquiryType('error'); }
+  }
+  if (incident) {
+    const incidentInput = document.getElementById('incident_ref');
+    if (incidentInput) incidentInput.value = incident;
+    const incidentField = document.getElementById('incident-ref-field');
+    if (incidentField) incidentField.style.display = '';
+  }
+})();
+
+function handleEnquiryType(val) {
+  const field = document.getElementById('incident-ref-field');
+  if (!field) return;
+  field.style.display = (val === 'data' || val === 'error') ? '' : 'none';
+}
+</script>

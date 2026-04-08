@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETA Incidents Map — Kathryn Loosemore</title>
+<style>
+:root {
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f5f4f0;
+  --color-text-primary: #1a1917;
+  --color-text-secondary: #5c5b57;
+  --color-border-secondary: rgba(0,0,0,0.22);
+  --color-border-tertiary: rgba(0,0,0,0.12);
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --font-sans: Georgia, 'Times New Roman', serif;
+}
+body {
+  font-family: var(--font-sans);
+  background: var(--color-background-primary);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 1.5rem 2rem;
+}
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+</style>
+</head>
+<body>
+<h1>ETA Incidents Map</h1>
+<p class="subtitle">232 locations · 1,034 incidents · 1961–2010</p>
+
+<div style="position: relative; width: 100%; font-family: var(--font-sans);">
+
+<div style="display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+  <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 16px; flex: 1; min-width: 120px;">
+    <div style="font-size: 12px; color: var(--color-text-secondary);">Locations</div>
+    <div style="font-size: 22px; font-weight: 500;">232</div>
+  </div>
+  <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 16px; flex: 1; min-width: 120px;">
+    <div style="font-size: 12px; color: var(--color-text-secondary);">Total incidents</div>
+    <div style="font-size: 22px; font-weight: 500;">1,034</div>
+  </div>
+  <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 16px; flex: 1; min-width: 120px;">
+    <div style="font-size: 12px; color: var(--color-text-secondary);">Highest frequency</div>
+    <div style="font-size: 22px; font-weight: 500;">San Sebastián · 114</div>
+  </div>
+</div>
+
+<div id="map" style="width:100%; height: 560px; border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); overflow: hidden;"></div>
+
+<div id="tooltip" style="position: fixed; display: none; background: var(--color-background-primary); border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 8px 12px; pointer-events: none; font-size: 13px; z-index: 9999; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+  <div id="tt-name" style="font-weight: 500; color: var(--color-text-primary);"></div>
+  <div id="tt-count" style="color: var(--color-text-secondary);"></div>
+</div>
+
+<div style="margin-top: 10px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+  <span style="font-size: 12px; color: var(--color-text-secondary);">Incidents:</span>
+  <div style="display: flex; align-items: center; gap: 6px;">
+    <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="#D85A30" opacity="0.75"/></svg>
+    <span style="font-size: 12px; color: var(--color-text-secondary);">1–4</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 6px;">
+    <svg width="18" height="18"><circle cx="9" cy="9" r="7" fill="#D85A30" opacity="0.75"/></svg>
+    <span style="font-size: 12px; color: var(--color-text-secondary);">5–15</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 6px;">
+    <svg width="24" height="24"><circle cx="12" cy="12" r="10" fill="#D85A30" opacity="0.75"/></svg>
+    <span style="font-size: 12px; color: var(--color-text-secondary);">16–50</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 6px;">
+    <svg width="32" height="32"><circle cx="16" cy="16" r="14" fill="#D85A30" opacity="0.75"/></svg>
+    <span style="font-size: 12px; color: var(--color-text-secondary);">51+</span>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const incidents = [
+  {name:"San Sebastian",lat:43.3183,lng:-1.9812,count:114},
+  {name:"Madrid",lat:40.4168,lng:-3.7038,count:97},
+  {name:"Bilbao",lat:43.2630,lng:-2.9340,count:71},
+  {name:"Vitoria",lat:42.8467,lng:-2.6728,count:44},
+  {name:"Pamplona",lat:42.8169,lng:-1.6432,count:43},
+  {name:"Irun",lat:43.3386,lng:-1.7886,count:23},
+  {name:"Getxo",lat:43.3500,lng:-3.0167,count:23},
+  {name:"Renteria",lat:43.3167,lng:-1.9000,count:20},
+  {name:"Tolosa",lat:43.1333,lng:-2.0833,count:19},
+  {name:"Barcelona",lat:41.3851,lng:2.1734,count:15},
+  {name:"Zarautz",lat:43.2833,lng:-2.1667,count:15},
+  {name:"Barakaldo",lat:43.2833,lng:-2.9833,count:14},
+  {name:"Basauri",lat:43.2333,lng:-2.8833,count:13},
+  {name:"Durango",lat:43.1667,lng:-2.6333,count:12},
+  {name:"Portugalete",lat:43.3167,lng:-3.0167,count:12},
+  {name:"Eibar",lat:43.1833,lng:-2.4667,count:11},
+  {name:"Pasaia",lat:43.3333,lng:-1.9167,count:11},
+  {name:"Gernika",lat:43.3167,lng:-2.6833,count:11},
+  {name:"Amorbieta-Etxano",lat:43.2167,lng:-2.7333,count:10},
+  {name:"Valencia",lat:39.4699,lng:-0.3763,count:10},
+  {name:"Hernani",lat:43.2667,lng:-1.9833,count:9},
+  {name:"Santurtzi",lat:43.3333,lng:-3.0333,count:9},
+  {name:"Zaragoza",lat:41.6488,lng:-0.8891,count:9},
+  {name:"Sevilla",lat:37.3891,lng:-5.9845,count:9},
+  {name:"Azpeitia",lat:43.1833,lng:-2.2667,count:8},
+  {name:"Arrasate",lat:43.0667,lng:-2.4833,count:8},
+  {name:"Santander",lat:43.4623,lng:-3.8099,count:8},
+  {name:"Guipuzkoa",lat:43.1500,lng:-2.1000,count:8},
+  {name:"Galdakao",lat:43.2333,lng:-2.8500,count:7},
+  {name:"Beasain",lat:43.0500,lng:-2.2000,count:7},
+  {name:"Oiartzun",lat:43.2833,lng:-1.8833,count:7},
+  {name:"Ordizia",lat:43.0500,lng:-2.1667,count:7},
+  {name:"Málaga",lat:36.7213,lng:-4.4214,count:7},
+  {name:"Oñati",lat:43.0333,lng:-2.4167,count:6},
+  {name:"Elgoibar",lat:43.2167,lng:-2.4167,count:6},
+  {name:"Logroño",lat:42.4650,lng:-2.4456,count:6},
+  {name:"Granada",lat:37.1773,lng:-3.5986,count:6},
+  {name:"Hondarribia",lat:43.3667,lng:-1.7833,count:5},
+  {name:"Andoain",lat:43.2167,lng:-2.0167,count:5},
+  {name:"Bergara",lat:43.1167,lng:-2.4167,count:5},
+  {name:"Burgos",lat:42.3440,lng:-3.6970,count:5},
+  {name:"Azkoitia",lat:43.1833,lng:-2.3167,count:5},
+  {name:"Sestao",lat:43.3000,lng:-3.0167,count:5},
+  {name:"Lasarte-Oria",lat:43.2667,lng:-2.0167,count:5},
+  {name:"Usurbil",lat:43.2667,lng:-2.0833,count:4},
+  {name:"Lezo",lat:43.3333,lng:-1.8833,count:4},
+  {name:"Lemoa",lat:43.2000,lng:-2.7667,count:4},
+  {name:"Ondarroa",lat:43.3333,lng:-2.4167,count:4},
+  {name:"Llodio",lat:43.1333,lng:-3.0000,count:4},
+  {name:"Zumarraga",lat:43.0833,lng:-2.3167,count:4},
+  {name:"Orio",lat:43.2833,lng:-2.1333,count:4},
+  {name:"Bermeo",lat:43.4167,lng:-2.7333,count:4},
+  {name:"The Hague",lat:52.0705,lng:4.3007,count:4},
+  {name:"Navarra",lat:42.6954,lng:-1.6762,count:4},
+  {name:"Arrigorriaga",lat:43.2000,lng:-2.8833,count:3},
+  {name:"Deba",lat:43.2833,lng:-2.3500,count:3},
+  {name:"Soraluze-Placencia",lat:43.1667,lng:-2.4667,count:3},
+  {name:"Markina-Xemein",lat:43.2667,lng:-2.5000,count:3},
+  {name:"Lekeitio",lat:43.3667,lng:-2.5000,count:3},
+  {name:"Amasa-Villabona",lat:43.1833,lng:-2.0333,count:3},
+  {name:"Mungia",lat:43.3500,lng:-2.8500,count:3},
+  {name:"Amurrio",lat:43.0500,lng:-3.0000,count:3},
+  {name:"Vizcaya",lat:43.2667,lng:-2.9333,count:3},
+  {name:"Leitza",lat:43.0833,lng:-1.9000,count:3},
+  {name:"Valle de Trápaga",lat:43.3000,lng:-3.0500,count:3},
+  {name:"León",lat:42.5987,lng:-5.5671,count:3},
+  {name:"Tarragona",lat:41.1187,lng:1.2445,count:3},
+  {name:"Balmaseda",lat:43.1833,lng:-3.2000,count:3},
+  {name:"Intxaurrondo",lat:43.3000,lng:-2.0000,count:3},
+  {name:"Villabona",lat:43.1833,lng:-2.0333,count:2},
+  {name:"Legazpi",lat:43.0500,lng:-2.3333,count:2},
+  {name:"Lemoniz",lat:43.4000,lng:-2.9167,count:2},
+  {name:"Urnieta",lat:43.2500,lng:-2.0000,count:2},
+  {name:"Antzuola",lat:43.1000,lng:-2.4167,count:2},
+  {name:"Urretxu",lat:43.1000,lng:-2.3833,count:2},
+  {name:"Iurreta",lat:43.1667,lng:-2.6500,count:2},
+  {name:"Sondika",lat:43.3000,lng:-2.9167,count:2},
+  {name:"Alsasua",lat:42.9000,lng:-2.1667,count:2},
+  {name:"Elorrio",lat:43.1167,lng:-2.5333,count:2},
+  {name:"Ispaster",lat:43.3667,lng:-2.5667,count:2},
+  {name:"Salvatierra",lat:42.8500,lng:-2.3833,count:2},
+  {name:"Erandio",lat:43.3000,lng:-2.9833,count:2},
+  {name:"Castelló",lat:39.9864,lng:-0.0513,count:2},
+  {name:"Zumaia",lat:43.3000,lng:-2.2500,count:2},
+  {name:"Estella",lat:42.6667,lng:-2.0333,count:2},
+  {name:"Amsterdam",lat:52.3676,lng:4.9041,count:2},
+  {name:"Sabadell",lat:41.5432,lng:2.1091,count:2},
+  {name:"Salamanca",lat:40.9701,lng:-5.6635,count:2},
+  {name:"Añorga",lat:43.2833,lng:-2.0167,count:2},
+  {name:"Palma de Mallorca",lat:39.5696,lng:2.6502,count:2},
+  {name:"Bayona",lat:43.3833,lng:-8.8500,count:2},
+  {name:"Zierbena",lat:43.3667,lng:-3.0833,count:2},
+  {name:"Fuenterrabia",lat:43.3667,lng:-1.7833,count:2},
+  {name:"Andalucía",lat:37.5443,lng:-4.7278,count:2},
+  {name:"Berriozar",lat:42.8333,lng:-1.6500,count:2},
+  {name:"Alava",lat:42.8500,lng:-2.6833,count:2},
+  {name:"Ciudad Real",lat:38.9848,lng:-3.9274,count:2},
+  {name:"Torrevieja",lat:37.9786,lng:-0.6894,count:2},
+  {name:"Urdax",lat:43.2667,lng:-1.5167,count:2},
+  {name:"Alicante",lat:38.3452,lng:-0.4810,count:2},
+  {name:"La Coruña",lat:43.3623,lng:-8.4115,count:2},
+  {name:"Belagua",lat:42.8833,lng:-0.9167,count:2},
+  {name:"Extremadura",lat:39.4937,lng:-6.0679,count:2},
+  {name:"Avila",lat:40.6564,lng:-4.6814,count:2},
+  {name:"Santoña",lat:43.4333,lng:-3.4500,count:2},
+  {name:"Biarritz",lat:43.4833,lng:-1.5583,count:1},
+  {name:"Urduliz",lat:43.3667,lng:-2.9500,count:1},
+  {name:"Berriz",lat:43.1833,lng:-2.6333,count:1},
+  {name:"Zizurkil",lat:43.2167,lng:-2.0333,count:1},
+  {name:"Getaria",lat:43.3000,lng:-2.2000,count:1},
+  {name:"Hendaye",lat:43.3667,lng:-1.7667,count:1},
+  {name:"Aduna",lat:43.2167,lng:-2.0500,count:1},
+  {name:"Echarri",lat:42.9000,lng:-1.9667,count:1},
+  {name:"Olaberria",lat:43.0333,lng:-2.2500,count:1},
+  {name:"Eskoriatza",lat:43.0167,lng:-2.5167,count:1},
+  {name:"Goizueta",lat:43.1667,lng:-1.8500,count:1},
+  {name:"Soto de la Marina",lat:43.4500,lng:-3.7833,count:1},
+  {name:"Ibarra",lat:43.1667,lng:-2.0500,count:1},
+  {name:"Alcira",lat:39.1500,lng:-0.4333,count:1},
+  {name:"Zaratamo",lat:43.2000,lng:-2.8833,count:1},
+  {name:"Burguete",lat:42.9833,lng:-1.3333,count:1},
+  {name:"Sopelana",lat:43.3833,lng:-2.9833,count:1},
+  {name:"Zegama",lat:42.9667,lng:-2.2833,count:1},
+  {name:"Elburgo",lat:42.8833,lng:-2.5000,count:1},
+  {name:"Zestoa",lat:43.2167,lng:-2.2667,count:1},
+  {name:"Aretxabaleta",lat:43.0333,lng:-2.5000,count:1},
+  {name:"Neguri",lat:43.3500,lng:-3.0167,count:1},
+  {name:"Izurza",lat:43.1167,lng:-2.7667,count:1},
+  {name:"Beriain",lat:42.7833,lng:-1.6333,count:1},
+  {name:"Lumbier",lat:42.6500,lng:-1.3000,count:1},
+  {name:"Plentzia",lat:43.4000,lng:-2.9500,count:1},
+  {name:"Algorta",lat:43.3500,lng:-3.0167,count:1},
+  {name:"Oviedo",lat:43.3603,lng:-5.8448,count:1},
+  {name:"Cartagena",lat:37.6000,lng:-0.9833,count:1},
+  {name:"Pesues",lat:43.3667,lng:-4.5000,count:1},
+  {name:"Sant Carles de la Rapità",lat:40.6167,lng:0.5833,count:1},
+  {name:"Somorrostro",lat:43.3333,lng:-3.0833,count:1},
+  {name:"Ortuella",lat:43.3000,lng:-3.0500,count:1},
+  {name:"Milan",lat:45.4654,lng:9.1866,count:1},
+  {name:"Bologna",lat:44.4949,lng:11.3426,count:1},
+  {name:"Rome",lat:41.9028,lng:12.4964,count:1},
+  {name:"Mutxamel",lat:38.4333,lng:-0.4167,count:1},
+  {name:"Murcia",lat:37.9834,lng:-1.1299,count:1},
+  {name:"Llica dÁmunt",lat:41.5667,lng:2.2167,count:1},
+  {name:"Berango",lat:43.3667,lng:-2.9833,count:1},
+  {name:"Arnedo",lat:42.2167,lng:-2.1000,count:1},
+  {name:"Cordoba",lat:37.8882,lng:-4.7794,count:1},
+  {name:"Villava",lat:42.8167,lng:-1.6167,count:1},
+  {name:"Reus",lat:41.1544,lng:1.1067,count:1},
+  {name:"Cambrils",lat:41.0667,lng:1.0583,count:1},
+  {name:"Salous",lat:41.0667,lng:1.1333,count:1},
+  {name:"Jaén",lat:37.7796,lng:-3.7849,count:1},
+  {name:"Ermua",lat:43.1833,lng:-2.5000,count:1},
+  {name:"Loyola",lat:43.1833,lng:-2.2500,count:1},
+  {name:"Zigoitia",lat:42.9333,lng:-2.7500,count:1},
+  {name:"Soria",lat:41.7667,lng:-2.4667,count:1},
+  {name:"Abadiño",lat:43.1500,lng:-2.6000,count:1},
+  {name:"Sallent de Gallego",lat:42.7667,lng:-0.3333,count:1},
+  {name:"Sant Adrià de Besos",lat:41.4333,lng:2.2167,count:1},
+  {name:"Cádiz",lat:36.5271,lng:-6.2886,count:1},
+  {name:"Viladcavalls",lat:41.5667,lng:1.9833,count:1},
+  {name:"Girona",lat:41.9794,lng:2.8214,count:1},
+  {name:"Cizur Mayor",lat:42.7833,lng:-1.7000,count:1},
+  {name:"Grenoble",lat:45.1885,lng:5.7245,count:1},
+  {name:"Roses",lat:42.2667,lng:3.1833,count:1},
+  {name:"Gandía",lat:38.9667,lng:-0.1833,count:1},
+  {name:"Leaburu",lat:43.1833,lng:-2.0833,count:1},
+  {name:"La Roda",lat:39.2167,lng:-2.1667,count:1},
+  {name:"Lacunza",lat:42.9333,lng:-2.0167,count:1},
+  {name:"Etxebarria",lat:43.1500,lng:-2.5833,count:1},
+  {name:"Santa Pola",lat:38.1833,lng:-0.5667,count:1},
+  {name:"Zamakola",lat:43.2667,lng:-2.9500,count:1},
+  {name:"Collado Villalba",lat:40.6333,lng:-4.0000,count:1},
+  {name:"Murueta",lat:43.3333,lng:-2.6833,count:1},
+  {name:"Sanguesa",lat:42.5667,lng:-1.2833,count:1},
+  {name:"San Adrián",lat:42.3333,lng:-1.9333,count:1},
+  {name:"Bedia",lat:43.2333,lng:-2.8333,count:1},
+  {name:"Benidorm",lat:38.5333,lng:-0.1333,count:1},
+  {name:"Lejona",lat:43.3167,lng:-2.9833,count:1},
+  {name:"Buezo",lat:42.7167,lng:-3.5000,count:1},
+  {name:"Aizoáin",lat:42.8333,lng:-1.6333,count:1},
+  {name:"Teruel",lat:40.3453,lng:-1.1065,count:1},
+  {name:"Ribadesella",lat:43.4667,lng:-5.0500,count:1},
+  {name:"San Vicente de la Barquera",lat:43.3833,lng:-4.4000,count:1},
+  {name:"Gijon",lat:43.5333,lng:-5.6619,count:1},
+  {name:"Llanes",lat:43.4167,lng:-4.7500,count:1},
+  {name:"Sanjenjo",lat:42.4000,lng:-8.8000,count:1},
+  {name:"Santiago de Compostela",lat:42.8782,lng:-8.5448,count:1},
+  {name:"Bujaruelo",lat:42.6667,lng:-0.1167,count:1},
+  {name:"Colmenar",lat:40.0000,lng:-3.7667,count:1},
+  {name:"Toledo",lat:39.8628,lng:-4.0273,count:1},
+  {name:"Almería",lat:36.8340,lng:-2.4637,count:1},
+  {name:"Valladolid",lat:41.6528,lng:-4.7236,count:1},
+  {name:"Santillana del Mar",lat:43.3833,lng:-4.1000,count:1},
+  {name:"Deusto",lat:43.2833,lng:-2.9667,count:1},
+  {name:"Denia",lat:38.8417,lng:0.1061,count:1},
+  {name:"Villajoyosa",lat:38.5083,lng:-0.2333,count:1},
+  {name:"Haro",lat:42.5833,lng:-2.8500,count:1},
+  {name:"Oyón",lat:42.5167,lng:-2.7167,count:1},
+  {name:"Igorre",lat:43.1667,lng:-2.8000,count:1},
+  {name:"Irura",lat:43.2000,lng:-2.0167,count:1},
+  {name:"Santesteban",lat:43.1333,lng:-1.7333,count:1},
+  {name:"SOS de los Reyes Católicos",lat:42.5000,lng:-1.2167,count:1},
+  {name:"Aratores",lat:42.6833,lng:-0.5833,count:1},
+  {name:"Murguía",lat:42.9500,lng:-2.8333,count:1},
+  {name:"Santutxu",lat:43.2667,lng:-2.9333,count:1},
+  {name:"Lezama-Legizamon",lat:43.3000,lng:-2.8667,count:1},
+  {name:"Trapagarán",lat:43.3000,lng:-3.0500,count:1},
+  {name:"Santa Ana de Bolueta",lat:43.2500,lng:-2.9167,count:1},
+  {name:"Mutriki",lat:43.3000,lng:-2.3833,count:1},
+  {name:"Ontón",lat:43.3667,lng:-3.2333,count:1},
+  {name:"Viana",lat:42.5167,lng:-2.3667,count:1},
+  {name:"Miranda del Ebro",lat:42.6833,lng:-2.9500,count:1},
+  {name:"Gallur",lat:41.8667,lng:-1.3167,count:1},
+  {name:"El Perdón",lat:42.8500,lng:-1.7500,count:1},
+  {name:"Luz Ardiden",lat:42.8667,lng:-0.0500,count:1},
+  {name:"Messanges",lat:43.7833,lng:-1.3833,count:1},
+  {name:"Castellón",lat:39.9864,lng:-0.0513,count:1},
+  {name:"Fuenmayor",lat:42.4667,lng:-2.5667,count:1},
+  {name:"Capbreton",lat:43.6417,lng:-1.4333,count:1},
+  {name:"Derio",lat:43.3000,lng:-2.8667,count:1},
+  {name:"Calahorra",lat:42.3000,lng:-1.9667,count:1},
+  {name:"Lapoblación",lat:42.6667,lng:-2.3833,count:1},
+  {name:"Legutiano",lat:42.9833,lng:-2.6333,count:1},
+  {name:"Zamudio",lat:43.3000,lng:-2.8833,count:1},
+  {name:"Elgea",lat:43.0333,lng:-2.5667,count:1},
+  {name:"Cantabria",lat:43.1828,lng:-3.9878,count:1},
+  {name:"Torremolinos",lat:36.6167,lng:-4.5000,count:1},
+  {name:"Lazkao",lat:43.0333,lng:-2.2167,count:1},
+  {name:"Guriezo",lat:43.3833,lng:-3.3333,count:1},
+  {name:"Calvià",lat:39.5667,lng:2.5167,count:1},
+  {name:"Dammarie-les Lys",lat:48.5167,lng:2.6500,count:1},
+];
+
+function getRadius(count) {
+  if (count >= 100) return 32;
+  if (count >= 50) return 24;
+  if (count >= 20) return 18;
+  if (count >= 10) return 14;
+  if (count >= 5) return 10;
+  if (count >= 2) return 7;
+  return 5;
+}
+
+function getColor(count) {
+  if (count >= 50) return '#A32D2D';
+  if (count >= 20) return '#D85A30';
+  if (count >= 10) return '#EF9F27';
+  if (count >= 5) return '#BA7517';
+  return '#D85A30';
+}
+
+window.addEventListener('load', function() {
+  const map = L.map('map', {
+    center: [42.5, -2.0],
+    zoom: 6,
+    zoomControl: true
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap contributors © CARTO',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  const tooltip = document.getElementById('tooltip');
+  const ttName = document.getElementById('tt-name');
+  const ttCount = document.getElementById('tt-count');
+
+  incidents.forEach(function(d) {
+    const circle = L.circleMarker([d.lat, d.lng], {
+      radius: getRadius(d.count),
+      fillColor: getColor(d.count),
+      color: '#fff',
+      weight: 1,
+      opacity: 0.9,
+      fillOpacity: 0.75
+    }).addTo(map);
+
+    circle.on('mouseover', function(e) {
+      tooltip.style.display = 'block';
+      ttName.textContent = d.name;
+      ttCount.textContent = d.count + (d.count === 1 ? ' incident' : ' incidents');
+      tooltip.style.left = (e.originalEvent.clientX + 12) + 'px';
+      tooltip.style.top = (e.originalEvent.clientY - 10) + 'px';
+    });
+    circle.on('mousemove', function(e) {
+      tooltip.style.left = (e.originalEvent.clientX + 12) + 'px';
+      tooltip.style.top = (e.originalEvent.clientY - 10) + 'px';
+    });
+    circle.on('mouseout', function() {
+      tooltip.style.display = 'none';
+    });
+  });
+});
+</script>
+</div>
+
+<div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,0.1);font-family:Helvetica Neue,Arial,sans-serif;font-size:13px;color:#5c5b57;">
+  <strong style="color:#1a1917">Explore the full dataset:</strong>
+  <a href="/database/" style="color:#1a1917;margin-left:0.5rem;text-decoration:underline;text-underline-offset:2px">ETA Attacks Database &rarr;</a>
+  <span style="margin:0 0.5rem;color:#8e8d88">&middot;</span>
+  Search and filter 1,034 incidents by date, location, method, target, and more.
+</div>
+
+</body>
+</html>

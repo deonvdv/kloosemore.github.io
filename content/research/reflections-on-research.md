@@ -200,3 +200,9 @@ Petitions, E. P. (2022). Mission Report. European Parliament. Retrieved from htt
 Reuters. (2018, May 2). Basque separatist group ETA says it has 'completely dissolved. Retrieved from Reuters.com: https://www.reuters.com/article/us-spain-eta-idUSKBN1I31TP
 
 START. (2022, January). Global Terror Database. Retrieved from Global Terror Database: www.start.umd.edu/gtd
+
+---
+
+**The database described in this article is now available interactively online.**
+
+**[Explore the ETA Attacks Database &rarr;](/database/)** — search and filter 1,034 documented incidents by date, location, attack type, and more, with click-to-expand detail panels and CSV export.
