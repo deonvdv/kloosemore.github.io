@@ -3,15 +3,19 @@
 <html lang="en"><head>
   
   
-  <meta name="title" content="Kathryn Loosemore PhD" />
+  <meta name="title" content="Kathryn Loosemore PhD — ETA Research Database" />
    
-  <meta name="description" content="Kathryn Loosemore holds a PhD in International Relations from Northumbria University and serves as the Chief Operating Officer at Kantar Worldpanel. Her expertise lies in examining the correlation between ETA&#39;s activities, material conditions, and public sentiment through her research endeavors." />
+  <meta name="description" content="Academic research on ETA&#39;s campaign 1961–2010. Explore a searchable database of 1,034 documented incidents, an interactive incidents map, and published research by Dr Kathryn Loosemore." />
    <meta name="keywords" content="ETA44Book Reviews44Publications"/>
   <meta name="robots" content="index, follow" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="author" content="Kathryn Loosemore PhD" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
 
   
   <link rel="shortcut icon" href="/logo.svg" />
@@ -28,8 +32,11 @@
     rel="stylesheet"
   />
 
-       
-  <link href="/css/styles.min.a4e56ea92e2e308d670b16051f136749be932128acbe5ecab6089abc2acfa704.css" rel="stylesheet" />
+  
+  
+  
+  
+  <link href="/css/styles.min.ca868aac5132f85cca24fc5b36f463126cf655551d831fe455c3633cc1f93ac1.css" rel="stylesheet" />
 
   
   <link
@@ -54,8 +61,7 @@
   ></script>
   
 
-  <script
-    defer
+  <script defer
     src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
   ></script>
 
@@ -64,16 +70,34 @@
     Book review published in &#39;Perspectives on Terrorism&#39;, Volume XIX, Issue 2, June 2025 ~
     Kathryn Loosemore PhD
   </title>
-</head>
-<body class="flex flex-col h-screen justify-between">
 
-<div class="navbar bg-transparent backdrop-filter backdrop-blur-sm z-10 fixed top-0">
-  <div class="flex-1">
+  <script>
+  changeTheme()
+
+  function changeTheme(){
+    if (localStorage.theme === 'dim' || ((localStorage.theme === 'auto' || !('theme' in localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+  }
+
+  </script>
+</head>
+<body class="flex flex-col h-screen justify-between" tabindex="0">
+
+<div class="navbar bg-base-100 z-10">
+  <div class="flex-1 flex items-center">
     <a href="/"class="text-lg font-bold flex" aria-label="Logo Link to the home">
     <div class="fill-base-content w-7 h-7 my-auto"><svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 -960 960 960" width="40"><path d="M292-506q18-36 38.5-71t43.5-67l-79-16-109 109 106 45Zm515-312q-102 5-184 43.5T463-658q-31 31-64 81t-59 107l133 133q57-26 107-59t81-64q78-78 116.5-159.5T821-803q0-3-1-6t-3-5q-2-2-4.5-3t-5.5-1ZM570-566q-20-20-20-49.5t20-49.5q20-20 49.5-20t49.5 20q20 20 20 49.5T669-566q-20 20-49.5 20T570-566Zm-61 278 45 105 109-109-15-79q-32 23-67.5 44T509-288Zm373-559q3 125-40.5 230.5T704-417q-1 1-2 1.5t-2 1.5l22 110q3 15-1 29t-15 25L565-109q-11 11-26.5 8T517-119l-68-157-169-170-158-67q-15-6-17.5-22t8.5-27l140-140q11-11 25-15.5t29-1.5l110 22q1-1 2-1.5t2-1.5q94-94 199-137.5T850-878q6 0 11.5 2.5T872-868q5 5 7.5 10t2.5 11ZM149-325q35-35 85.5-35.5T320-326q35 35 34.5 85.5T319-155q-26 26-80.5 43T75-80q15-109 31.5-164t42.5-81Zm42 43q-14 15-25 47t-19 82q50-8 82-19t47-25q19-17 19.5-42.5T278-284q-19-18-44.5-17.5T191-282Z"/></svg>
 </div>
       <div class="ml-3 my-auto pl-3">Home</div>
     </a>
+    
+    
+    <div class="hidden sm:block ml-8">
+      <a href="/contact/" class="text-lg font-bold">Contact</a>
+    </div>
   </div>
   <div class="flex-none">
   
@@ -112,14 +136,11 @@
         
       </label>
       <ul tabindex="0" class="menu menu-sm dropdown-content z-[1] p-2 shadow-lg bg-base-100 rounded-lg w-40">
-          
-          <li><a href="/research/">Research</a></li>
         
       </ul>
     </div>
   </div>
-</div>
-<div class="mb-auto"> 
+</div><div class="mb-auto"> 
    
     
 <div class=" bg-base-200  mb-7  place-items-start">
@@ -132,7 +153,7 @@
              Book review published in 'Perspectives on Terrorism', Volume XIX, Issue 2, June 2025 
         </h1>
         
-        <p class="font-mono balanced  text-lg    uppercase">Dr Loosemore reviews 'Javier Argomaniz, Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country' in the June edition (iIssue 2) of 'Perspectives on Terrorism'.</p>
+        <p class="font-mono balanced  text-lg    uppercase">Dr Loosemore reviews 'Javier Argomaniz, Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country' in the June edition (Issue 2) of 'Perspectives on Terrorism'.</p>
         
         
 
@@ -186,14 +207,12 @@
 
   
 
-  <article class="prose text-justify feed"><p>Dr Loosemore reviews &lsquo;Javier Argomaniz, Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country&rsquo; in the June edition (iIssue 2) of &lsquo;Perspectives on Terrorism&rsquo;.</p>
-<p>It has been more than seven years since the Basque militant group ETA (Euskadi Ta Askatasuna) disarmed and disbanded following a bloody campaign that lasted almost 60 years. The complexity of ETA’s campaign, and the factors that eventually brought their reign of terror in the Basque Country to an end, are the subject of Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country. In this highly engaging and informative study, Javier Argomaniz explores multiple factors at play in ETA’s demise, focused on the actions and impact of civil society organisations (CSOs). As he states early in the text, “I elaborate on the relationship between nonviolent action and the other major factors usually recognized by scholars as pivotal for ETA’s defeat” (p. 32).</p>
-<p><a href="https://pt.icct.nl/article/book-review-javier-argomaniz-resisting-terror-civil-action-and-non-violent-resistance">Read the full review on Perspectives on Terrorism</a></p>
+  <article class="prose text-justify feed"><p>It has been more than seven years since the Basque militant group ETA (Euskadi Ta Askatasuna) disarmed and disbanded following a bloody campaign that lasted almost 60 years. The complexity of ETA’s campaign, and the factors that eventually brought their reign of terror in the Basque Country to an end, are the subject of Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country. In this highly engaging and informative study, Javier Argomaniz explores multiple factors at play in ETA’s demise, focused on the actions and impact of civil society organisations (CSOs). As he states early in the text, “I elaborate on the relationship between nonviolent action and the other major factors usually recognized by scholars as pivotal for ETA’s defeat” (p. 32).</p>
+<p><a href="https://pt.icct.nl/article/book-review-javier-argomaniz-resisting-terror-civil-action-and-non-violent-resistance">Download the full review on Perspectives on Terrorism</a></p>
 </article>
 
 
     </div>
-
 
 <footer class="mt-20 p-2 bg-base-200 text-base-content">
      <div class="max-w-2xl justify-between m-auto flex text-xs space-y-1">
@@ -205,7 +224,7 @@
                
                
                   
-               &copy; 2025 - Kathryn Loosemore PhD. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>   
+               &copy; 2026 - Kathryn Loosemore PhD. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a> | <a href="/contact/" class="link">Contact</a>
            </p>
            
            <p class="block mb-2">
@@ -215,21 +234,10 @@
            </p>
 
           </div>
-
-          
-
-
-           
            
      </div>
  
-   
   </footer>
-
-
-
-
-
 
 </body>
 

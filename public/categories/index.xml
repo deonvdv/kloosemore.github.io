@@ -4,7 +4,7 @@
     <title>Categories on Kathryn Loosemore PhD</title>
     <link>/categories/</link>
     <description>Recent content in Categories on Kathryn Loosemore PhD</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
@@ -32,15 +32,8 @@
     <item>
       <title>Databases</title>
       <link>/categories/databases/</link>
-      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
       <guid>/categories/databases/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Visualisation</title>
-      <link>/categories/visualisation/</link>
-      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>/categories/visualisation/</guid>
       <description></description>
     </item>
   </channel>

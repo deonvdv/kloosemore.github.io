@@ -1,18 +1,22 @@
 <!-- This website has been built with 💖 and 🍕 on 🌍 using Salinger Theme for Hugo framework. The theme has been released with MIT licence and can be found at https://github.com/jacksalici/salinger-theme. -->
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.122.0">
+	<meta name="generator" content="Hugo 0.159.2">
   
   
-  <meta name="title" content="Kathryn Loosemore PhD" />
+  <meta name="title" content="Kathryn Loosemore PhD — ETA Research Database" />
    
-  <meta name="description" content="Kathryn Loosemore holds a PhD in International Relations from Northumbria University and serves as the Chief Operating Officer at Kantar Worldpanel. Her expertise lies in examining the correlation between ETA&#39;s activities, material conditions, and public sentiment through her research endeavors." />
-   <meta name="keywords" content="Terrorism44ETA44Databases"/>
+  <meta name="description" content="Academic research on ETA&#39;s campaign 1961–2010. Explore a searchable database of 1,034 documented incidents, an interactive incidents map, and published research by Dr Kathryn Loosemore." />
+   <meta name="keywords" content="ETA attacks database44ETA victims list44ETA terrorism Spain44Basque separatist attacks44víctimas de ETA44atentados ETA base de datos44ETA terrorismo España"/>
   <meta name="robots" content="index, follow" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="author" content="Kathryn Loosemore PhD" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
 
   
   <link rel="shortcut icon" href="/logo.svg" />
@@ -29,8 +33,11 @@
     rel="stylesheet"
   />
 
-       
-  <link href="/css/styles.min.a4e56ea92e2e308d670b16051f136749be932128acbe5ecab6089abc2acfa704.css" rel="stylesheet" />
+  
+  
+  
+  
+  <link href="/css/styles.min.ca868aac5132f85cca24fc5b36f463126cf655551d831fe455c3633cc1f93ac1.css" rel="stylesheet" />
 
   
   <link
@@ -55,8 +62,7 @@
   ></script>
   
 
-  <script
-    defer
+  <script defer
     src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
   ></script>
 
@@ -64,16 +70,34 @@
   <title>
     Kathryn Loosemore PhD
   </title>
-</head>
-<body class="flex flex-col h-screen justify-between">
 
-<div class="navbar bg-transparent backdrop-filter backdrop-blur-sm z-10 fixed top-0">
-  <div class="flex-1">
+  <script>
+  changeTheme()
+
+  function changeTheme(){
+    if (localStorage.theme === 'dim' || ((localStorage.theme === 'auto' || !('theme' in localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+  }
+
+  </script>
+</head>
+<body class="flex flex-col h-screen justify-between" tabindex="0">
+
+<div class="navbar bg-base-100 z-10">
+  <div class="flex-1 flex items-center">
     <a href="/"class="text-lg font-bold flex" aria-label="Logo Link to the home">
     <div class="fill-base-content w-7 h-7 my-auto"><svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 -960 960 960" width="40"><path d="M292-506q18-36 38.5-71t43.5-67l-79-16-109 109 106 45Zm515-312q-102 5-184 43.5T463-658q-31 31-64 81t-59 107l133 133q57-26 107-59t81-64q78-78 116.5-159.5T821-803q0-3-1-6t-3-5q-2-2-4.5-3t-5.5-1ZM570-566q-20-20-20-49.5t20-49.5q20-20 49.5-20t49.5 20q20 20 20 49.5T669-566q-20 20-49.5 20T570-566Zm-61 278 45 105 109-109-15-79q-32 23-67.5 44T509-288Zm373-559q3 125-40.5 230.5T704-417q-1 1-2 1.5t-2 1.5l22 110q3 15-1 29t-15 25L565-109q-11 11-26.5 8T517-119l-68-157-169-170-158-67q-15-6-17.5-22t8.5-27l140-140q11-11 25-15.5t29-1.5l110 22q1-1 2-1.5t2-1.5q94-94 199-137.5T850-878q6 0 11.5 2.5T872-868q5 5 7.5 10t2.5 11ZM149-325q35-35 85.5-35.5T320-326q35 35 34.5 85.5T319-155q-26 26-80.5 43T75-80q15-109 31.5-164t42.5-81Zm42 43q-14 15-25 47t-19 82q50-8 82-19t47-25q19-17 19.5-42.5T278-284q-19-18-44.5-17.5T191-282Z"/></svg>
 </div>
       <div class="ml-3 my-auto pl-3">Home</div>
     </a>
+    
+    
+    <div class="hidden sm:block ml-8">
+      <a href="/contact/" class="text-lg font-bold">Contact</a>
+    </div>
   </div>
   <div class="flex-none">
   
@@ -112,89 +136,185 @@
         
       </label>
       <ul tabindex="0" class="menu menu-sm dropdown-content z-[1] p-2 shadow-lg bg-base-100 rounded-lg w-40">
-          
-          <li><a href="/research/">Research</a></li>
         
       </ul>
     </div>
   </div>
-</div>
-<div class="mb-auto">  
-<div class=" bg-base-200  min-h-[400px] mb-9 place-items-start">
-    <div class="feed w-full py-24">
-      <div class="  py-5 space-y-5 ">
-        
-        
+</div><div class="mb-auto">
 
-        <h1 class="  text-6xl  font-bold font-serif">
-             Kathryn Loosemore PhD 
-        </h1>
-        
-        <p class="font-mono balanced  text-xl    uppercase">Kathryn Loosemore holds a PhD in International Relations from Northumbria University and serves as the Chief Operating Officer at Kantar Worldpanel. Her expertise lies in examining the correlation between ETA's activities, material conditions, and public sentiment through her research endeavors.</p>
-        
-        
-
-        
-        
-        
-      
-       
-        
-
-<div class="not-prose space-x-2 py-3">
-  
-  
-  
-  
-
-  
-  
-  
-  <a
-    class="text-base-content"
-    target="_blank"
-    rel="noopener"
-    href="https://www.linkedin.com/in/kathloosemore"
-    aria-label="github"
-  >
-    <i class="fa-brands fa-linkedin text-2xl" aria-hidden="true"></i>
-  </a>
+<style>
  
-  
+.db-hero {
+  background: #1a1917;
+  color: #f5f4f0;
+  padding: 3.5rem 1.5rem 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.db-hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.db-hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.85rem;
+  color: #f5f4f0;
+}
+.db-hero-sub {
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 1rem;
+  color: #9e9c96;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+.db-stat-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  font-family: Helvetica Neue, Arial, sans-serif;
+}
+.db-stat-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.db-stat-num {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.db-stat-num.killed { color: #e8a0a0; }
+.db-stat-num.injured { color: #f0b060; }
+.db-stat-num.incidents { color: #f5f4f0; }
+.db-stat-lbl {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9e9c96;
+}
+.db-cta-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+@media (max-width: 700px) {
+  .db-cta-group { flex-direction: column; }
+}
+.db-cta-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f7b267;
+  color: #1a1917;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 1rem 1rem;
+  border-radius: 6px;
+  border: 2px solid #e8943a;
+  box-shadow: 0 4px 12px rgba(247, 178, 103, 0.4);
+  text-decoration: none;
+  transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+  letter-spacing: -0.01em;
+  gap: 0.2rem;
+  text-align: center;
+}
+.db-cta-btn:hover { background: #e8943a; box-shadow: 0 6px 16px rgba(247, 178, 103, 0.55); transform: translateY(-1px); }
+.db-cta-btn .btn-label { font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
 
-  
-</div>
+ 
+.about-section {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1.5rem;
+}
+.about-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: inherit;
+}
+.about-section p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: inherit;
+  opacity: 0.85;
+}
+
+ 
+.research-section {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 2rem;
+}
+.research-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+</style>
 
 
-        
-
+<section class="db-hero">
+  <div class="db-hero-inner">
+    <p style="font-family:Helvetica Neue,Arial,sans-serif;font-size:1rem;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;color:#9e9c96;margin-bottom:0.3rem;">Research by Dr. Kathryn Loosemore</p>
+    <p style="font-family:Helvetica Neue,Arial,sans-serif;font-size:1.4rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;color:#f5f4f0;margin-bottom:0.6rem;">Basque terrorist group Euskadi Ta Askatasuna (ETA)</p>
+    <h1>A comprehensive record of ETA&#8217;s campaign, 1959&#8211;2018</h1>
+    <p class="db-hero-sub">Search, filter and export data on 1,034 documented ETA attacks drawn from verified sources.</p>
+    <div class="db-stat-row">
+      <div class="db-stat-chip">
+        <span class="db-stat-num incidents">1,034</span>
+        <span class="db-stat-lbl">Incidents</span>
+      </div>
+      <div class="db-stat-chip">
+        <span class="db-stat-num killed">953</span>
+        <span class="db-stat-lbl">Killed</span>
+      </div>
+      <div class="db-stat-chip">
+        <span class="db-stat-num injured">1,945</span>
+        <span class="db-stat-lbl">Injured</span>
+      </div>
+      <div class="db-stat-chip">
+        <span class="db-stat-num" style="color:#f5d76e;">64</span>
+        <span class="db-stat-lbl">Kidnapped</span>
       </div>
     </div>
+    <div class="db-cta-group">
+      <a href="/database/" class="db-cta-btn"><span class="btn-label">Explore</span><span class="btn-label">the database</span></a>
+      <a href="/map/" class="db-cta-btn"><span class="btn-label">Explore</span><span class="btn-label">the incidents map</span></a>
+      <a href="/animated_map/ETA_Attacks_Animated_Map.html" class="db-cta-btn"><span class="btn-label">Explore</span><span class="btn-label">the animated map</span></a>
+    </div>
+  </div>
+</section>
+
+
+<div class="about-section">
+  <h2>About the researcher</h2>
+  <p>Dr. Kathryn Loosemore holds a PhD in International Relations from Northumbria University. Dr. Loosemore&#39;s work centres on the Basque terrorist group Euskadi Ta Askatasuna (ETA). Her expertise lies in examining the correlation between ETA&#39;s activities, material conditions, and public sentiment. She has created a complete database of ETA&#39;s victims (deaths, injuries, and kidnappings) that spans their entire lifespan as an organisation (1959-2018). Dr. Loosemore is a Visiting Scholar at Northumbria University, a member of the Swansea University International Advisory Board, and serves on the Board of Trustees at the American University in Bulgaria. She is also a Contributing Editor of Critical Terrorism Studies.</p>
 </div>
 
 
 
-
-<div class="space-y-20">
+<div class="research-section">
+  <h2>Research and writing
+    <a href="/research" class="align-middle badge badge-sm hover:badge-outline" style="margin-left:0.5rem"><span class="font-sans font-normal text-[0.7rem] capitalize"><i class="fa-solid fa-arrow-right-long"></i> See all (3)</span></a>
+  </h2>
   
-  <div class="feed">
-    <h2 class="text-4xl font-bold font-serif">
-       Latest Research 📚 
-      <a
-        href="/research"
-        class="align-middle badge badge-sm hover:badge-outline"
-        ><span class="font-sans font-normal text-[0.7rem] capitalize"
-          > <i class="fa-solid fa-arrow-right-long"></i>
-          See all (5)
-         </span
-      ></a>
-    </h2>
-
-    
-    
-    
-    <div class="pt-3 flex justify-between">
-  <div class="text-lg max-w-sm hover:text-secondary">
+  
+  
+  
+<div class="p-4 -m-3 flex justify-between gap-4 items-center hover:text-secondary hover:bg-base-200 rounded-lg">
+  <div class="text-lg max-w-sm  balanced">
     <div class="text-[0.7rem] space-x-5 font-sans capitalize">
       
       <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-160q-23 0-41.5-18.5T80-220v-520q0-23 18.5-41.5T140-800h256q12.444 0 23.722 5t19.366 13.088L481-740h339q23 0 41.5 18.5T880-680H455l-60-60H140v520l90-355q5-20 21.826-32.5T289-620h574q29 0 47.5 23t10.5 52l-88 339q-6 24-22 35t-41 11H140Zm63-60h572l84-340H287l-84 340Zm-63-353v-167 167Zm63 353 84-340-84 340Z"/></svg>
@@ -208,15 +328,20 @@
          June 1, 2025
     </div>
 
-    <div class="font-mono block uppercase balanced">
+    <div class="font-mono block uppercase">
       <a href="/research/book-review-perspectives-terrorism/"
-        > Dr Loosemore reviews &#39;Javier Argomaniz, Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country&#39; in the June edition (iIssue 2) of &#39;Perspectives on Terrorism&#39;. </a
+        > Dr Loosemore reviews &#39;Javier Argomaniz, Resisting Terror: Civil Action and Non-Violent Resistance to Terrorism in Basque Country&#39; in the June edition (Issue 2) of &#39;Perspectives on Terrorism&#39;. </a
       >
     </div>
   </div>
-</div> 
-    <div class="pt-3 flex justify-between">
-  <div class="text-lg max-w-sm hover:text-secondary">
+  
+</div>
+
+
+  
+  
+<div class="p-4 -m-3 flex justify-between gap-4 items-center hover:text-secondary hover:bg-base-200 rounded-lg">
+  <div class="text-lg max-w-sm  balanced">
     <div class="text-[0.7rem] space-x-5 font-sans capitalize">
       
       <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-160q-23 0-41.5-18.5T80-220v-520q0-23 18.5-41.5T140-800h256q12.444 0 23.722 5t19.366 13.088L481-740h339q23 0 41.5 18.5T880-680H455l-60-60H140v520l90-355q5-20 21.826-32.5T289-620h574q29 0 47.5 23t10.5 52l-88 339q-6 24-22 35t-41 11H140Zm63-60h572l84-340H287l-84 340Zm-63-353v-167 167Zm63 353 84-340-84 340Z"/></svg>
@@ -230,37 +355,20 @@
          August 31, 2023
     </div>
 
-    <div class="font-mono block uppercase balanced">
+    <div class="font-mono block uppercase">
       <a href="/research/counter_terror_by_proxy/"
-        > Counter-terror by proxy: the Spanish State’s illicit war with ETA by Emmanuel-Pierre Guittet, Manchester: Manchester University Press, 2021, 201 pp., £80 (UK) (Hardback), ISBN: 9781526158826 </a
+        > Dr Loosemore reviews &#39;Counter-terror by proxy: the Spanish State’s illicit war with ETA&#39; by Emmanuel-Pierre Guittet, Manchester: Manchester University Press, 2021 </a
       >
     </div>
   </div>
-</div> 
-    <div class="pt-3 flex justify-between">
-  <div class="text-lg max-w-sm hover:text-secondary">
-    <div class="text-[0.7rem] space-x-5 font-sans capitalize">
-      
-      <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-160q-23 0-41.5-18.5T80-220v-520q0-23 18.5-41.5T140-800h256q12.444 0 23.722 5t19.366 13.088L481-740h339q23 0 41.5 18.5T880-680H455l-60-60H140v520l90-355q5-20 21.826-32.5T289-620h574q29 0 47.5 23t10.5 52l-88 339q-6 24-22 35t-41 11H140Zm63-60h572l84-340H287l-84 340Zm-63-353v-167 167Zm63 353 84-340-84 340Z"/></svg>
+  
+</div>
 
-        
-          Terrorism,  ETA,  Databases,  Visualisation  
 
-      <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"/></svg>
-
-       
-         August 6, 2023
-    </div>
-
-    <div class="font-mono block uppercase balanced">
-      <a href="/research/eta_over_time/"
-        > Various visualisations of ETA victims from 1961 to 2010. </a
-      >
-    </div>
-  </div>
-</div> 
-    <div class="pt-3 flex justify-between">
-  <div class="text-lg max-w-sm hover:text-secondary">
+  
+  
+<div class="p-4 -m-3 flex justify-between gap-4 items-center hover:text-secondary hover:bg-base-200 rounded-lg">
+  <div class="text-lg max-w-sm  balanced">
     <div class="text-[0.7rem] space-x-5 font-sans capitalize">
       
       <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-160q-23 0-41.5-18.5T80-220v-520q0-23 18.5-41.5T140-800h256q12.444 0 23.722 5t19.366 13.088L481-740h339q23 0 41.5 18.5T880-680H455l-60-60H140v520l90-355q5-20 21.826-32.5T289-620h574q29 0 47.5 23t10.5 52l-88 339q-6 24-22 35t-41 11H140Zm63-60h572l84-340H287l-84 340Zm-63-353v-167 167Zm63 353 84-340-84 340Z"/></svg>
@@ -274,46 +382,22 @@
          January 24, 2023
     </div>
 
-    <div class="font-mono block uppercase balanced">
+    <div class="font-mono block uppercase">
       <a href="/research/reflections-on-research/"
         > The challenge of establishing the impact of terrorist organisations: development of a database on ETA’s activities </a
       >
     </div>
   </div>
-</div> 
-    <div class="pt-3 flex justify-between">
-  <div class="text-lg max-w-sm hover:text-secondary">
-    <div class="text-[0.7rem] space-x-5 font-sans capitalize">
-      
-      <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-160q-23 0-41.5-18.5T80-220v-520q0-23 18.5-41.5T140-800h256q12.444 0 23.722 5t19.366 13.088L481-740h339q23 0 41.5 18.5T880-680H455l-60-60H140v520l90-355q5-20 21.826-32.5T289-620h574q29 0 47.5 23t10.5 52l-88 339q-6 24-22 35t-41 11H140Zm63-60h572l84-340H287l-84 340Zm-63-353v-167 167Zm63 353 84-340-84 340Z"/></svg>
+  
+</div>
 
-        
-          Terrorism,  ETA,  Databases  
 
-      <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"/></svg>
-
-       
-         January 1, 2023
-    </div>
-
-    <div class="font-mono block uppercase balanced">
-      <a href="/research/eta_database/"
-        > Detailed database of ETA victims from 1961 to 2010. </a
-      >
-    </div>
-  </div>
-</div> 
-  </div>
   
 </div>
 
 
 
-<div class="feed prose"></div>
-
-
     </div>
-
 
 <footer class="mt-20 p-2 bg-base-200 text-base-content">
      <div class="max-w-2xl justify-between m-auto flex text-xs space-y-1">
@@ -325,7 +409,7 @@
                
                
                   
-               &copy; 2025 - Kathryn Loosemore PhD. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>   
+               &copy; 2026 - Kathryn Loosemore PhD. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a> | <a href="/contact/" class="link">Contact</a>
            </p>
            
            <p class="block mb-2">
@@ -335,21 +419,10 @@
            </p>
 
           </div>
-
-          
-
-
-           
            
      </div>
  
-   
   </footer>
-
-
-
-
-
 
 </body>
 

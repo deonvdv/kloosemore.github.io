@@ -67,7 +67,7 @@
 
   
   <title>
-    Categories ~
+    Contact ~
     Kathryn Loosemore PhD
   </title>
 
@@ -140,8 +140,7 @@
       </ul>
     </div>
   </div>
-</div><div class="mb-auto">
-
+</div><div class="mb-auto"> 
   
 <div class=" bg-base-200  mb-7  place-items-start">
     <div class="feed w-full py-24">
@@ -150,10 +149,10 @@
         
 
         <h1 class="  text-4xl  font-bold font-serif">
-             All categories 
+             Contact 
         </h1>
         
-        
+        <p class="font-mono balanced  text-lg    uppercase">Get in touch with Dr. Kathryn Loosemore regarding her research on ETA terrorism studies and International Relations.</p>
         
         
 
@@ -161,6 +160,14 @@
         <div class="text-xs pt-2">
   
   
+  
+  <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"/></svg>
+      Published on
+    
+    July 18, 2024.
+
+
+      
   
 
   <br/>
@@ -182,35 +189,136 @@
 
 
 
-  <div class="feed">
+  <article class="prose text-justify feed"><h1 id="contact">Contact</h1>
+<p>I welcome inquiries about my research on ETA terrorism studies, International Relations, and related academic topics. Whether you&rsquo;re a fellow researcher, student, or interested in my work, please feel free to reach out.</p>
+<h2 id="areas-of-interest">Areas of Interest</h2>
+<ul>
+<li>ETA terrorism studies and victim databases</li>
+<li>International Relations theory and practice</li>
+<li>Counter-terrorism research methodologies</li>
+<li>Academic collaboration opportunities</li>
+</ul>
+<p>Please use the form below to send me a message. I&rsquo;ll do my best to respond within a few business days.</p>
+</article>
+  
+  <div class="mt-8">
+    <form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  class="max-w-2xl mx-auto space-y-6 p-6 bg-base-100 rounded-lg shadow-lg">
 
-    <div class="flex justify-start">
-      <div class="font-mono text-lg uppercase max-w-sm hover:text-secondary">
-        <a href="/categories/book-reviews/" class="feed__link"> Book Reviews </a>
-      </div>
-      <div class="font-mono text-4xl uppercase max-w-sm pl-7">2</div>
-    </div>
+  <input type="hidden" name="access_key" value="d7c4a553-b0e3-43fb-b02c-959bdc446399">
+  <input type="hidden" name="subject" value="New message from kloosemore.github.io contact form">
+  <input type="hidden" name="redirect" value="https://kloosemore.github.io/contact-success/">
 
-    <div class="flex justify-start">
-      <div class="font-mono text-lg uppercase max-w-sm hover:text-secondary">
-        <a href="/categories/databases/" class="feed__link"> Databases </a>
-      </div>
-      <div class="font-mono text-4xl uppercase max-w-sm pl-7">1</div>
-    </div>
+  <div class="form-control">
+    <label class="label" for="name">
+      <span class="label-text font-semibold">Name *</span>
+    </label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      class="input input-bordered w-full"
+      placeholder="Your full name">
+  </div>
 
-    <div class="flex justify-start">
-      <div class="font-mono text-lg uppercase max-w-sm hover:text-secondary">
-        <a href="/categories/eta/" class="feed__link"> ETA </a>
-      </div>
-      <div class="font-mono text-4xl uppercase max-w-sm pl-7">3</div>
-    </div>
+  <div class="form-control">
+    <label class="label" for="email">
+      <span class="label-text font-semibold">Email address *</span>
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="_replyto"
+      required
+      class="input input-bordered w-full"
+      placeholder="your.email@example.com">
+  </div>
 
-    <div class="flex justify-start">
-      <div class="font-mono text-lg uppercase max-w-sm hover:text-secondary">
-        <a href="/categories/terrorism/" class="feed__link"> Terrorism </a>
-      </div>
-      <div class="font-mono text-4xl uppercase max-w-sm pl-7">3</div>
-    </div>
+  <div class="form-control">
+    <label class="label" for="type">
+      <span class="label-text font-semibold">Type of enquiry *</span>
+    </label>
+    <select id="type" name="enquiry_type" class="select select-bordered w-full" onchange="handleEnquiryType(this.value)">
+      <option value="research">Research question</option>
+      <option value="data">Additional data or source</option>
+      <option value="error">Error or correction</option>
+      <option value="general">General</option>
+    </select>
+  </div>
+
+  <div class="form-control" id="incident-ref-field" style="display:none">
+    <label class="label" for="incident_ref">
+      <span class="label-text font-semibold">Incident reference <span class="font-normal opacity-60">(optional)</span></span>
+    </label>
+    <input
+      type="text"
+      id="incident_ref"
+      name="incident_reference"
+      class="input input-bordered w-full"
+      placeholder="e.g. Madrid 1980 March, or a row number from the database">
+    <label class="label">
+      <span class="label-text-alt opacity-60">Paste the date, location, or any identifying detail from the database record you're referring to.</span>
+    </label>
+  </div>
+
+  <div class="form-control">
+    <label class="label" for="message">
+      <span class="label-text font-semibold">Message *</span>
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows="6"
+      class="textarea textarea-bordered w-full"
+      placeholder="Please provide details about your inquiry, research interests, or questions about the database..."></textarea>
+  </div>
+
+  <div class="form-control">
+    <button type="submit" class="btn btn-primary">
+      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+      </svg>
+      Send message
+    </button>
+  </div>
+
+  <div class="text-sm text-base-content/70 mt-4">
+    <p>* Required fields</p>
+    <p>Your message will be sent securely. I respect your privacy and will only use your contact information to respond to your inquiry.</p>
+  </div>
+
+</form>
+
+<script>
+(function() {
+  
+  const params = new URLSearchParams(window.location.search);
+  const subject = params.get('subject');
+  const incident = params.get('incident');
+
+  if (subject === 'correction') {
+    const typeSelect = document.getElementById('type');
+    if (typeSelect) { typeSelect.value = 'error'; handleEnquiryType('error'); }
+  }
+  if (incident) {
+    const incidentInput = document.getElementById('incident_ref');
+    if (incidentInput) incidentInput.value = incident;
+    const incidentField = document.getElementById('incident-ref-field');
+    if (incidentField) incidentField.style.display = '';
+  }
+})();
+
+function handleEnquiryType(val) {
+  const field = document.getElementById('incident-ref-field');
+  if (!field) return;
+  field.style.display = (val === 'data' || val === 'error') ? '' : 'none';
+}
+</script>
+
   </div>
 
 
