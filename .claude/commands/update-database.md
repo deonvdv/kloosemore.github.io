@@ -16,7 +16,10 @@ csv_path = r"REPLACE_WITH_CSV_PATH"
 out_path = r"C:\Users\kathr\Projects\kloosemore.github.io\static\database\eta_js_array.txt"
 
 rows = []
-with open(csv_path, newline='', encoding='latin-1') as f:
+with open(csv_path, 'rb') as _f:
+    _bom = _f.read(3)
+_enc = 'utf-8-sig' if _bom == b'\xef\xbb\xbf' else 'latin-1'
+with open(csv_path, newline='', encoding=_enc) as f:
     reader = csv.DictReader(f)
     for row in reader:
         def num(val, default=0):
