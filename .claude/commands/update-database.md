@@ -63,6 +63,15 @@ print(f"Written {len(rows)} rows to {out_path}")
 
 3. Report back: how many rows were written, and confirm the first and last rows look correct by reading lines 1–3 and the last 2 lines of the output file.
 
+4. Build the site by running `hugo` via Bash.
+
+5. Stage and commit both the source and built files, then push:
+   ```
+   git add static/database/eta_js_array.txt public/
+   git commit -m "data: update ETA victims database to vX.XX"
+   git push origin main
+   ```
+
 ## CSV column mapping
 | CSV column | JS field |
 |---|---|
